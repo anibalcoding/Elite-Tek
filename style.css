@@ -279,23 +279,6 @@
         }
 
         /* ── PHOTO ROW ── */
-        .photo-labels {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1px;
-            background: #e8e8e8;
-        }
-
-        .photo-label {
-            padding: 15px 28px;
-            background: #ffffff;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.26em;
-            text-transform: uppercase;
-            color: #777777;
-        }
-
         .photo-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -304,16 +287,38 @@
             width: 100%;
         }
 
+        .photo-column {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            background: #ffffff;
+        }
+
+        .photo-label {
+            padding: 15px 28px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.26em;
+            text-transform: uppercase;
+            color: #777777;
+            border-bottom: 1px solid #e8e8e8;
+            flex-shrink: 0;
+        }
+
         .photo-panel {
             height: 520px;
             overflow: hidden;
             min-width: 0;
             position: relative;
+            background: #f0f0f0;
         }
 
         .photo-panel .slide {
             position: absolute;
-            inset: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -472,10 +477,6 @@
             .hero h1 { font-size: 40px; }
 
             .hero-sub { font-size: 15px; }
-
-            .photo-labels { grid-template-columns: 1fr; }
-
-            .photo-label + .photo-label { border-top: 1px solid #e8e8e8; }
 
             .photo-row { grid-template-columns: 1fr; }
 
