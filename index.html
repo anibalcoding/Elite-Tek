@@ -71,10 +71,42 @@
     <!-- ── HERO ── -->
     <section class="hero">
         <div class="hero-inner">
-            <p class="eyebrow">Frisco, TX · Est. 2026</p>
-            <h1>Technical training for players who want more.</h1>
-            <p class="hero-sub">Private and small-group development sessions led by Coach Nico. We're not a club — we sharpen the players clubs already have. First touch, ball mastery, speed of play.</p>
-            <div class="hero-ctas">
+            <div class="eyebrow-row" data-reveal="0">
+                <svg width="18" height="18" viewBox="0 0 100 100" fill="none" class="hero-ball" aria-hidden="true">
+                    <circle cx="50" cy="50" r="47" fill="#fff" stroke="#0b0b0c" stroke-width="3"/>
+                    <!-- centre pentagon -->
+                    <path d="M50 31 L63 40 L58.5 55 L41.5 55 L37 40 Z" fill="#0b0b0c"/>
+                    <!-- top patch -->
+                    <path d="M50 4  L55 15 L50 22 L45 15 Z" fill="#0b0b0c"/>
+                    <!-- upper-right patch -->
+                    <path d="M81 20 L88 31 L80 37 L72 28 Z" fill="#0b0b0c"/>
+                    <!-- lower-right patch -->
+                    <path d="M85 64 L82 77 L72 78 L67 65 Z" fill="#0b0b0c"/>
+                    <!-- lower-left patch -->
+                    <path d="M15 64 L28 65 L18 78 L11 77 Z" fill="#0b0b0c"/>
+                    <!-- upper-left patch -->
+                    <path d="M19 20 L28 28 L20 37 L12 31 Z" fill="#0b0b0c"/>
+                    <!-- seam lines centre→top / centre→upper-right / etc -->
+                    <line x1="50" y1="31" x2="50" y2="22"   stroke="#0b0b0c" stroke-width="2.5"/>
+                    <line x1="63" y1="40" x2="72" y2="28"   stroke="#0b0b0c" stroke-width="2.5"/>
+                    <line x1="58.5" y1="55" x2="67" y2="65" stroke="#0b0b0c" stroke-width="2.5"/>
+                    <line x1="41.5" y1="55" x2="28" y2="65" stroke="#0b0b0c" stroke-width="2.5"/>
+                    <line x1="37" y1="40" x2="28" y2="28"   stroke="#0b0b0c" stroke-width="2.5"/>
+                    <!-- outer ring seams -->
+                    <line x1="55" y1="15" x2="72" y2="28"   stroke="#0b0b0c" stroke-width="2.5"/>
+                    <line x1="80" y1="37" x2="82" y2="77"   stroke="#0b0b0c" stroke-width="2.5"/>
+                    <line x1="72" y1="78" x2="55" y2="87"   stroke="#0b0b0c" stroke-width="2.5"/>
+                    <line x1="45" y1="87" x2="18" y2="78"   stroke="#0b0b0c" stroke-width="2.5"/>
+                    <line x1="11" y1="77" x2="20" y2="37"   stroke="#0b0b0c" stroke-width="2.5"/>
+                    <line x1="28" y1="28" x2="45" y2="15"   stroke="#0b0b0c" stroke-width="2.5"/>
+                    <!-- bottom patch (partially clipped by circle) -->
+                    <path d="M50 96 L55 87 L50 80 L45 87 Z" fill="#0b0b0c"/>
+                </svg>
+                <p class="eyebrow">Frisco, TX · Est. 2026</p>
+            </div>
+            <h1 data-reveal="100">Technical training for players who want more.</h1>
+            <p class="hero-sub" data-reveal="200">Private and small-group development sessions led by Coach Nico. We're not a club — we sharpen the players clubs already have. First touch, ball mastery, speed of play.</p>
+            <div class="hero-ctas" data-reveal="300">
                 <a href="#" class="btn-primary">Book a Session</a>
                 <a href="#programs" class="btn-text-link">View Programs</a>
             </div>
@@ -120,27 +152,30 @@
     <!-- ── PULL QUOTE ── -->
     <section class="pull-quote">
         <div class="pull-quote-inner">
-            <div class="quote-rule"></div>
-            <p class="quote-text">"Clubs build teams. We build the player inside the team."</p>
-            <p class="quote-attribution">Coach Nico — Founder</p>
+            <div class="quote-rule" data-reveal="0"></div>
+            <p class="quote-text" data-reveal="120">"Clubs build teams. We build the player inside the team."</p>
+            <p class="quote-attribution" data-reveal="240">Coach Nico — Founder</p>
         </div>
     </section>
 
     <!-- ── THREE COLUMNS ── -->
     <section class="columns-section" id="programs">
-        <div class="col-item" id="private">
+        <div class="col-item program-col" id="private" data-reveal="0">
+            <span class="col-ball"></span>
             <span class="col-number">01</span>
             <h3 class="col-title">Private Training</h3>
             <p class="col-desc">One-on-one sessions built around your player's position, club feedback, and technical gaps. Every rep is intentional.</p>
             <a href="#" class="col-link">Explore Private</a>
         </div>
-        <div class="col-item">
+        <div class="col-item program-col" data-reveal="120">
+            <span class="col-ball"></span>
             <span class="col-number">02</span>
             <h3 class="col-title">Small Group Sessions</h3>
             <p class="col-desc">Capped at six players. Game-speed technical work with competitive pressure — the detail clubs don't have time for.</p>
             <a href="#" class="col-link">Explore Groups</a>
         </div>
-        <div class="col-item">
+        <div class="col-item program-col" data-reveal="240">
+            <span class="col-ball"></span>
             <span class="col-number">03</span>
             <h3 class="col-title">Player Assessments</h3>
             <p class="col-desc">A structured baseline evaluation with a written development plan — so parents and players know exactly what to work on.</p>
@@ -158,6 +193,7 @@
         <div class="footer-right">© 2026 Elite Tek Soccer Academy</div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script>
         function toggleMenu(btn) {
             const isOpen = btn.classList.toggle('open');
@@ -174,11 +210,14 @@
             });
         });
 
+        var prefersReduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+        // ── SLIDESHOW ──
         (function () {
             function initSlideshow(el, intervalMs, delayMs) {
-                const slides = el.querySelectorAll('.slide');
+                var slides = el.querySelectorAll('.slide');
                 if (slides.length < 2) return;
-                let current = 0;
+                var current = 0;
                 setTimeout(function () {
                     setInterval(function () {
                         slides[current].classList.remove('active');
@@ -189,6 +228,64 @@
             }
             initSlideshow(document.getElementById('slide-left'),  4500,    0);
             initSlideshow(document.getElementById('slide-right'), 4500, 2250);
+        }());
+
+        // ── CURTAIN REVEAL ──
+        (function () {
+            var columns = document.querySelectorAll('.photo-column');
+            if (prefersReduced) return;
+
+            columns.forEach(function (col) {
+                col.querySelector('.photo-panel').style.clipPath = 'inset(100% 0 0 0)';
+                var label = col.querySelector('.photo-label');
+                label.style.opacity = '0';
+                label.style.transform = 'translateX(-16px)';
+                col.classList.add('curtain-ready');
+            });
+
+            var obs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('in-view');
+                    obs.unobserve(entry.target);
+                });
+            }, { threshold: 0.25 });
+
+            columns.forEach(function (col) { obs.observe(col); });
+        }());
+
+        // ── ANIMATIONS ──
+        (function () {
+            if (prefersReduced) return;
+
+            var reveals = document.querySelectorAll('[data-reveal]');
+            reveals.forEach(function (el) {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(26px)';
+                el.style.transition = 'opacity 0.9s cubic-bezier(0.22,0.9,0.3,1), transform 0.9s cubic-bezier(0.22,0.9,0.3,1)';
+            });
+
+            var revealObs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    entry.target.style.transitionDelay = (entry.target.dataset.reveal || '0') + 'ms';
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    revealObs.unobserve(entry.target);
+                });
+            }, { threshold: 0.15 });
+
+            reveals.forEach(function (el) { revealObs.observe(el); });
+
+            if (window.gsap) {
+                gsap.from('.hero-ball', {
+                    x: -260,
+                    rotation: -720,
+                    duration: 1.3,
+                    ease: 'power3.out',
+                    delay: 0.25
+                });
+            }
         }());
     </script>
 
