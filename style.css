@@ -330,7 +330,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
+            object-position: center 20%;
             opacity: 0;
             display: block;
             max-width: none;
@@ -510,6 +510,7 @@
             .photo-row { grid-template-columns: 1fr; }
 
             .photo-panel { height: 360px; }
+            .photo-panel .slide { object-fit: cover; object-position: center 20%; }
 
             .pull-quote { padding: 72px 24px; }
 
@@ -526,6 +527,16 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 16px;
+            }
+        }
+
+        /* ── DESKTOP: full image, no crop ── */
+        @media (min-width: 821px) {
+            .photo-panel .slide {
+                object-fit: contain;
+                object-position: center;
+                transform: scaleX(1.10) scaleY(1.05);
+                transform-origin: center center;
             }
         }
 
