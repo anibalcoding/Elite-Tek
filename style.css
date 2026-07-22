@@ -530,13 +530,11 @@
             }
         }
 
-        /* ── DESKTOP: full image, no crop ── */
+        /* ── DESKTOP: fill panel ── */
         @media (min-width: 821px) {
             .photo-panel .slide {
-                object-fit: contain;
-                object-position: center;
-                transform: scaleX(1.10) scaleY(1.05);
-                transform-origin: center center;
+                object-fit: cover;
+                object-position: center 35%;
             }
         }
 
