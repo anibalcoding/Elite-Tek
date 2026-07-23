@@ -559,6 +559,89 @@
 
         .about-owner-bio:last-child { margin-bottom: 0; }
 
+        /* Bio / Career tabs */
+        .about-tabs {
+            display: flex;
+            gap: 28px;
+            border-bottom: 1px solid #e8e8e8;
+            margin-bottom: 24px;
+            margin-top: 4px;
+        }
+
+        .about-tab {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #aaaaaa;
+            background: none;
+            border: none;
+            padding: 0 0 12px;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.18s;
+        }
+
+        .about-tab::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #c9a13b;
+            transform: scaleX(0);
+            transition: transform 0.2s ease;
+        }
+
+        .about-tab.active {
+            color: #0b0b0c;
+        }
+
+        .about-tab.active::after {
+            transform: scaleX(1);
+        }
+
+        .about-tab:hover { color: #0b0b0c; }
+
+        .about-tab-panel {
+            display: none;
+        }
+
+        .about-tab-panel.active {
+            display: block;
+        }
+
+        .about-experience-list {
+            list-style: none;
+        }
+
+        .about-experience-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 16px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #0b0b0c;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .about-experience-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .about-experience-year {
+            font-size: 11px;
+            font-weight: 400;
+            color: #777777;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
         .about-owner--reverse {
             direction: rtl;
         }

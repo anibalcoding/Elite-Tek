@@ -197,17 +197,53 @@
             <div class="about-owner-content">
                 <span class="about-badge">Founder &amp; Head Coach</span>
                 <h3 class="about-owner-name">Nico Zaldana</h3>
-                <p class="about-owner-bio">Nico Zaldana is the Founder and Head Coach of Elite Tek Soccer Academy, bringing years of experience developing elite youth players in the Dallas area. His approach is built on technical precision, intentional repetition, and the belief that every player has untapped potential waiting to be unlocked.</p>
-                <p class="about-owner-bio">Under his guidance, players have improved their first touch, accelerated their decision-making, and earned spots on higher-level club teams. His training goes beyond drills — it builds the mindset required to compete at the next level.</p>
+                <div class="about-tabs" role="tablist">
+                    <button class="about-tab active" data-tab="bio-nico" role="tab" aria-selected="true">Bio</button>
+                    <button class="about-tab" data-tab="career-nico" role="tab" aria-selected="false">Career</button>
+                </div>
+                <div class="about-tab-panel active" id="bio-nico" role="tabpanel">
+                    <p class="about-owner-bio">Nico Zaldana is the Founder and Head Coach of Elite Tek Soccer Academy. A product of elite academies across Europe and the Americas, Nico brings a global perspective to player development that few coaches in the Dallas area can match. His philosophy is built on the technical precision and tactical intelligence he absorbed training at some of the world's most respected programs.</p>
+                    <p class="about-owner-bio">Under his guidance, players have improved their first touch, sharpened their decision-making, and earned spots on higher-level club teams. At Elite Tek, he builds more than skill. He builds the complete player.</p>
+                </div>
+                <div class="about-tab-panel" id="career-nico" role="tabpanel">
+                    <ul class="about-experience-list">
+                        <li class="about-experience-item"><span>Ajax Academy</span><span class="about-experience-year">Netherlands · 2007</span></li>
+                        <li class="about-experience-item"><span>Feyenoord Academy</span><span class="about-experience-year">Netherlands · 2008</span></li>
+                        <li class="about-experience-item"><span>DC United Academy</span><span class="about-experience-year">USA · 2009</span></li>
+                        <li class="about-experience-item"><span>Getafe Academy</span><span class="about-experience-year">Spain · 2010</span></li>
+                        <li class="about-experience-item"><span>Español Academy</span><span class="about-experience-year">Spain · 2011</span></li>
+                        <li class="about-experience-item"><span>Orlando City Academy</span><span class="about-experience-year">USA · 2012</span></li>
+                        <li class="about-experience-item"><span>FC Dallas Academy</span><span class="about-experience-year">USA · 2013</span></li>
+                        <li class="about-experience-item"><span>Málaga CF</span><span class="about-experience-year">Spain · 2014</span></li>
+                        <li class="about-experience-item"><span>Jacksonville Armada</span><span class="about-experience-year">USA · 2015</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <!-- Second owner -->
         <div class="about-owner about-owner--reverse">
             <div class="about-owner-content">
-                <span class="about-badge">Founder & Head Coach</span>
+                <span class="about-badge">Head Coach</span>
                 <h3 class="about-owner-name">Ricky Mejia</h3>
-                <p class="about-owner-bio">Bio coming soon — update with Ricky's background, coaching experience, and role at Elite Tek Soccer Academy.</p>
+                <div class="about-tabs" role="tablist">
+                    <button class="about-tab active" data-tab="bio-ricky" role="tab" aria-selected="true">Bio</button>
+                    <button class="about-tab" data-tab="career-ricky" role="tab" aria-selected="false">Career</button>
+                </div>
+                <div class="about-tab-panel active" id="bio-ricky" role="tabpanel">
+                    <p class="about-owner-bio">Ricky Mejia brings a playing career that spans professional development, college soccer, and international competition with the Mexico Futsal National Team. From FC Dallas MLS Next to semi-professional play with Fort Worth Vaqueros, Ricky's firsthand experience at every level of the game gives him a sharp eye for exactly what separates good players from great ones.</p>
+                    <p class="about-owner-bio">At Elite Tek, Ricky channels that experience into every session, helping players develop the technical quality and competitive mentality required to reach the next level.</p>
+                </div>
+                <div class="about-tab-panel" id="career-ricky" role="tabpanel">
+                    <ul class="about-experience-list">
+                        <li class="about-experience-item"><span>Atlas Academy</span><span class="about-experience-year">Mexico · 2002–2003</span></li>
+                        <li class="about-experience-item"><span>FC Dallas MLS Next / DA</span><span class="about-experience-year">USA · 2008–2012</span></li>
+                        <li class="about-experience-item"><span>FC Dallas Reserve Team</span><span class="about-experience-year">USA · 2011–2012</span></li>
+                        <li class="about-experience-item"><span>Richland College</span><span class="about-experience-year">USA · 2013–2014</span></li>
+                        <li class="about-experience-item"><span>Mexico Futsal National Team</span><span class="about-experience-year">2014–2015</span></li>
+                        <li class="about-experience-item"><span>Fort Worth Vaqueros</span><span class="about-experience-year">Semi-Pro · 2014–2016</span></li>
+                    </ul>
+                </div>
             </div>
             <div class="about-owner-photo">
                 <img src="assets/ricky-mejia.jpeg" alt="Ricky Mejia — Head Coach">
@@ -651,6 +687,27 @@
                     delay: 0.25
                 });
             }
+        }());
+
+        // ── BIO / CAREER TABS ──
+        (function () {
+            document.querySelectorAll('.about-tabs').forEach(function (tabGroup) {
+                tabGroup.querySelectorAll('.about-tab').forEach(function (tab) {
+                    tab.addEventListener('click', function () {
+                        var content = tabGroup.parentElement;
+                        tabGroup.querySelectorAll('.about-tab').forEach(function (t) {
+                            t.classList.remove('active');
+                            t.setAttribute('aria-selected', 'false');
+                        });
+                        content.querySelectorAll('.about-tab-panel').forEach(function (p) {
+                            p.classList.remove('active');
+                        });
+                        tab.classList.add('active');
+                        tab.setAttribute('aria-selected', 'true');
+                        document.getElementById(tab.dataset.tab).classList.add('active');
+                    });
+                });
+            });
         }());
 
         // ── CONTACT FORM ──
