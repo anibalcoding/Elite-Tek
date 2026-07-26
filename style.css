@@ -322,6 +322,11 @@
             background: #ffffff;
         }
 
+        @keyframes kenburns {
+            from { transform: scale(1.0); }
+            to   { transform: scale(1.08); }
+        }
+
         .photo-panel .slide {
             position: absolute;
             top: 0;
@@ -336,10 +341,12 @@
             display: block;
             max-width: none;
             will-change: transform, opacity;
+            transition: opacity 0.9s ease;
         }
 
         .photo-panel .slide.active {
             opacity: 1;
+            animation: kenburns 4.5s ease-out both;
         }
 
         /* ── PULL QUOTE ── */
