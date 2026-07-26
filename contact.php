@@ -14,9 +14,9 @@ $email   = trim($_POST['email']   ?? '');
 $phone   = htmlspecialchars(strip_tags(trim($_POST['phone']   ?? '')));
 $message = htmlspecialchars(strip_tags(trim($_POST['message'] ?? '')));
 
-if (empty($name) || empty($email) || empty($message)) {
+if (empty($name) || empty($email) || empty($phone) || empty($message)) {
     http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'Name, email, and message are required.']);
+    echo json_encode(['success' => false, 'message' => 'Name, email, phone, and message are required.']);
     exit;
 }
 

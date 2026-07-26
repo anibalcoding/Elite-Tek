@@ -1159,6 +1159,35 @@
 
         .prog-card-cta:hover { background: #111111; color: #ffffff; }
         .prog-card-2nd { margin-top:1.4rem;}
+
+        .programs-specialty-divider {
+            max-width: 1180px;
+            margin: 64px auto 28px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 56px;
+            border-top: 1px solid #e6e3dd;
+        }
+
+        .programs-specialty-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: #c9a13b;
+            white-space: nowrap;
+        }
+
+        .programs-specialty-grid {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
         /* ── TRAIN WITHOUT COMMITTING ── */
         .dropin-section {
             background: #ffffff;
@@ -1227,9 +1256,11 @@
             position: relative;
             border-radius: 8px;
             overflow: hidden;
-            min-height: 420px;
+            min-height: 480px;
             display: flex;
             flex-direction: column;
+            max-width: 1180px;
+            margin: 0 auto;
         }
 
         .dropin-featured-bg {
@@ -1317,11 +1348,12 @@
         }
 
         .dropin-book-pill {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            width: 100%;
+            align-self: flex-start;
+            min-width: 220px;
             background: #ffffff;
             color: #111111;
             font-family: 'Oswald', sans-serif;
@@ -1541,11 +1573,12 @@
             .programs-price-session { margin-left: 0; flex-basis: 100%; }
             .programs-bullets-grid { grid-template-columns: 1fr; }
             .programs-supporting-grid { grid-template-columns: 1fr; gap: 16px; }
+            .programs-specialty-divider { margin: 40px auto 20px; padding-top: 40px; }
+            .programs-specialty-grid { grid-template-columns: 1fr; gap: 16px; }
             .prog-card-num { font-size: 80px; }
 
             /* Drop-in */
             .dropin-section { padding: 64px 24px 80px; }
-            .dropin-grid { grid-template-columns: 1fr; }
             .dropin-featured-card { min-height: 420px; }
         }
 
@@ -2101,4 +2134,217 @@
             .socials-grid { grid-template-columns: 1fr; gap: 16px; }
             .social-card { aspect-ratio: auto; min-height: 360px; }
             .social-card-handle { font-size: 19px; }
+        }
+
+        /* ── LOCATIONS ── */
+        .locations-section {
+            background: #ffffff;
+            padding: 100px 48px 120px;
+            border-top: 1px solid #e6e3dd;
+        }
+
+        .locations-intro {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding-bottom: 70px;
+        }
+
+        .locations-eyebrow-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .locations-eyebrow-rule {
+            display: block;
+            width: 34px;
+            height: 2px;
+            background: #c9a13b;
+            flex-shrink: 0;
+        }
+
+        .locations-eyebrow-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: #8a6d1f;
+        }
+
+        .locations-headline {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(40px, 5.4vw, 84px);
+            font-weight: 700;
+            line-height: 0.93;
+            text-transform: uppercase;
+            color: #111111;
+            letter-spacing: -0.02em;
+            margin-bottom: 32px;
+        }
+
+        .locations-intro-para {
+            max-width: 560px;
+            font-family: 'Archivo', sans-serif;
+            font-size: 16.5px;
+            color: #5f5c57;
+            line-height: 1.75;
+        }
+
+        .loc-band {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+            padding: 56px 0;
+            border-top: 1px solid #e6e3dd;
+        }
+
+        .loc-band--reverse .loc-photo-col { order: 2; }
+        .loc-band--reverse .loc-content-col { order: 1; }
+
+        .loc-photo-wrap {
+            aspect-ratio: 5 / 4;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e6e3dd;
+        }
+
+        .loc-photo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .loc-photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #faf8f4 0%, #f0ede6 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .loc-pin-icon {
+            display: flex;
+            width: 52px;
+            height: 52px;
+            color: #c9a13b;
+            opacity: 0.6;
+        }
+
+        .loc-pin-icon svg { width: 100%; height: 100%; }
+
+        .loc-photo-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #8a867f;
+            text-align: center;
+            padding: 0 28px;
+            line-height: 1.5;
+        }
+
+        .loc-index-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .loc-index {
+            font-family: 'Oswald', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #8a6d1f;
+        }
+
+        .loc-category {
+            font-family: 'Archivo', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: #6b6862;
+        }
+
+        .loc-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(34px, 3.6vw, 52px);
+            font-weight: 700;
+            line-height: 0.98;
+            color: #111111;
+            letter-spacing: -0.01em;
+            margin-bottom: 22px;
+        }
+
+        .loc-address {
+            font-family: 'Archivo', sans-serif;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 1.65;
+            color: #3a3833;
+            margin-bottom: 26px;
+        }
+
+        .loc-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-bottom: 30px;
+        }
+
+        .loc-chip {
+            font-family: 'Archivo', sans-serif;
+            font-size: 13.5px;
+            color: #5f5c57;
+            background: #faf8f4;
+            border: 1px solid #e6e3dd;
+            border-radius: 100px;
+            padding: 7px 15px;
+            line-height: 1;
+            display: inline-block;
+        }
+
+        .loc-directions-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #111111;
+            color: #ffffff;
+            font-family: 'Oswald', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            padding: 14px 28px;
+            border-radius: 100px;
+            text-decoration: none;
+            min-height: 44px;
+            transition: background 0.2s;
+        }
+
+        .loc-directions-pill span { color: #c9a13b; transition: transform 0.2s; }
+        .loc-directions-pill:hover { background: #c9a13b; color: #ffffff; }
+        .loc-directions-pill:hover span { color: #ffffff; transform: translateX(4px); }
+
+        @media (max-width: 820px) {
+            .locations-section { padding: 72px 24px 80px; }
+            .locations-intro { padding-bottom: 48px; }
+            .loc-band {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                padding: 40px 0;
+            }
+            .loc-band--reverse .loc-photo-col { order: 0; }
+            .loc-band--reverse .loc-content-col { order: 1; }
         }
