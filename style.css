@@ -697,14 +697,16 @@
         .trainer-photo {
             height: 620px;
             overflow: hidden;
+         
         }
 
         .trainer-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center top;
+            object-position: center 50%;
             display: block;
+
         }
 
         .trainer-photo--jordan img {
@@ -802,18 +804,31 @@
             max-width: 1180px;
             margin: 0 auto 64px;
             display: grid;
-            grid-template-columns: 45% 1fr;
+            grid-template-columns: 52% 1fr;
             gap: 56px;
             align-items: start;
             padding-bottom: 80px;
             border-bottom: 1px solid #e6e3dd;
         }
 
+        .programs-flagship-left {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .programs-flagship-left .programs-price-bar {
+            margin: 0;
+            border-top: 1px solid #e6e3dd;
+            border-bottom: none;
+            padding: 22px 0 0;
+        }
+
         .programs-flagship-photo-wrap {
             position: relative;
             border-radius: 8px;
             overflow: hidden;
-            aspect-ratio: 4/5;
+            aspect-ratio: 1.2;
         }
 
         .programs-flagship-img {
@@ -1001,7 +1016,7 @@
         .prog-card-photo-wrap {
             position: relative;
             overflow: hidden;
-            aspect-ratio: 16/10;
+            aspect-ratio: 1.0;
         }
 
         .prog-card-photo-wrap::after {
@@ -1021,14 +1036,20 @@
         .prog-card--in .prog-card-photo-wrap::after {
             transform: scaleX(1);
         }
-
+       
         .prog-card-photo {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center top;
+            object-position: center;
             display: block;
         }
+
+        .fix-card-photo .prog-card-photo {
+            object-position: center 38%;
+        }
+
+        
 
         .prog-card-num {
             position: absolute;
@@ -1278,6 +1299,7 @@
             min-height: 540px;
             display: flex;
             flex-direction: column;
+            aspect-ratio: .9;
         }
 
         .dropin-info-col {
@@ -1626,6 +1648,7 @@
             .hero h1 { font-size: 36px; }
             .hero-sub { font-size: 15px; }
 
+
             /* Photo row */
             .photo-row { grid-template-columns: 1fr; max-width: 100%; width: 100%; }
             .photo-panel { height: auto; aspect-ratio: 3/4; }
@@ -1660,13 +1683,14 @@
             .about-staff-header { padding: 40px 24px 28px; }
             .about-trainers-grid { grid-template-columns: 1fr; margin-bottom: 72px; }
             .trainer-info { padding: 22px 24px 28px; }
-            .trainer-photo { height: 360px; background: none; }
-            .trainer-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 0%; }
+            .trainer-photo { height: 300px; background: none; }
+            .trainer-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
 
             /* Programs */
             .programs-section { padding: 0 24px 80px; }
             .programs-intro { padding-top: 64px; padding-bottom: 56px; }
             .programs-intro-para { font-size: 16px; }
+            .programs-headline { font-size: 34px; }
             .programs-flagship { grid-template-columns: 1fr; gap: 32px; padding-bottom: 56px; margin-bottom: 40px; }
             .programs-price-amount { font-size: 48px; }
             .programs-price-session { margin-left: 0; flex-basis: 100%; }
@@ -2016,6 +2040,7 @@
         @media (max-width: 820px) {
             .roster-section { padding: 72px 24px 80px; }
             .roster-header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
+            .roster-heading { font-size: 36px; }
             .roster-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
             .roster-card-info { padding: 0 14px 14px; }
         }
@@ -2231,6 +2256,7 @@
         @media (max-width: 820px) {
             .socials-section { padding: 72px 24px 80px; }
             .socials-header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
+            .socials-heading { font-size: 36px; }
             .socials-grid { grid-template-columns: 1fr; gap: 16px; }
             .social-card { aspect-ratio: auto; min-height: 360px; }
             .social-card-handle { font-size: 19px; }
@@ -2447,4 +2473,5 @@
             }
             .loc-band--reverse .loc-photo-col { order: 0; }
             .loc-band--reverse .loc-content-col { order: 1; }
+            .loc-name { font-size: 26px; }
         }

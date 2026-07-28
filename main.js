@@ -241,7 +241,7 @@ var prefersReduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced
             name: 'INPOWERiQ',
             address: ['6051 Alma Rd', 'McKinney, TX 75070', 'United States'],
             chips: ['Mini Elites', 'Beginners Sessions', 'Shooting Sessions'],
-            photo: 'assets/inpower-optimized.webp',
+            photo: 'assets/inpower.jpeg',
             reverse: true
         }
     ];
