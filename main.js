@@ -42,9 +42,12 @@
     var fbIcon = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>';
     var ttIcon = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>';
 
+    var heartIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>';
+    var thumbIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>';
+
     var platforms = [
-        { icon: igIcon, platform: 'Instagram', handle: '@EliteTekSoccerAcademy', tag: 'Training · Highlights', url: 'https://www.instagram.com/EliteTekSoccerAcademy' },
-        { icon: fbIcon, platform: 'Facebook',  handle: '@EliteTekSoccerAcademy', tag: 'Updates · Community',   url: 'https://www.facebook.com/EliteTekSoccerAcademy' },
+        { icon: igIcon, platform: 'Instagram', handle: '@EliteTekSoccerAcademy', tag: 'Training · Highlights', url: 'https://www.instagram.com/EliteTekSoccerAcademy', image: 'assets/instagram-page.jpeg', likeIcon: heartIcon, likeColor: '#E1306C' },
+        { icon: fbIcon, platform: 'Facebook',  handle: '@EliteTekSoccerAcademy', tag: 'Updates · Community',   url: 'https://www.facebook.com/EliteTekSoccerAcademy', image: 'assets/facebook-page.jpeg',  likeIcon: thumbIcon, likeColor: '#1877F2' },
         { icon: ttIcon, platform: 'TikTok',    handle: '@EliteTekSoccerAcademy', tag: 'Drills · Reels',       url: 'https://www.tiktok.com/@EliteTekSoccerAcademy' }
     ];
 
@@ -58,7 +61,13 @@
                 '<span class="social-card-platform">' + p.platform + '</span>' +
             '</div>' +
             '<div class="social-card-panel">' +
-                '<span class="social-card-panel-icon">' + p.icon + '</span>' +
+                (p.image
+                    ? '<img src="' + p.image + '" alt="' + p.platform + ' page preview" class="social-card-panel-img">' +
+                      '<div class="fb-like-overlay" aria-hidden="true" style="--like-color:' + p.likeColor + '">' +
+                        '<span class="fb-like-thumb">' + p.likeIcon + '</span>' +
+                        '<span class="fb-like-count">0</span>' +
+                      '</div>'
+                    : '<span class="social-card-panel-icon">' + p.icon + '</span>') +
             '</div>' +
             '<div class="social-card-bottom">' +
                 '<span class="social-card-tick"></span>' +
@@ -68,6 +77,29 @@
             '</div>' +
         '</a>';
     }).join('');
+
+    var likeTargets = { Instagram: 100, Facebook: 847 };
+    document.querySelectorAll('.fb-like-count').forEach(function (likeEl) {
+        var platform = likeEl.closest('.social-card').querySelector('.social-card-platform').textContent.trim();
+        var target = likeTargets[platform] || 100;
+        if (!prefersReduced) {
+            var obs = new IntersectionObserver(function (entries) {
+                if (!entries[0].isIntersecting) return;
+                obs.disconnect();
+                var startTs = null;
+                requestAnimationFrame(function step(ts) {
+                    if (!startTs) startTs = ts;
+                    var progress = Math.min((ts - startTs) / 1800, 1);
+                    var eased = 1 - Math.pow(1 - progress, 3);
+                    likeEl.textContent = Math.floor(eased * target).toLocaleString();
+                    if (progress < 1) requestAnimationFrame(step);
+                });
+            }, { threshold: 0.5 });
+            obs.observe(likeEl);
+        } else {
+            likeEl.textContent = target.toLocaleString();
+        }
+    });
 }());
 
 // ── GOLD BULLETS RENDER ──
