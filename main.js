@@ -143,7 +143,21 @@ var prefersReduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced
 
 // ── SLIDESHOW ──
 (function () {
+    function shuffle(el) {
+        var items = Array.prototype.slice.call(el.querySelectorAll('.slide'));
+        for (var i = items.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = items[i]; items[i] = items[j]; items[j] = tmp;
+        }
+        items.forEach(function (img, idx) {
+            img.classList.toggle('active', idx === 0);
+            el.appendChild(img);
+        });
+    }
+
     function initSlideshow(el, intervalMs, delayMs) {
+        if (!el) return;
+        shuffle(el);
         var slides = el.querySelectorAll('.slide');
         if (slides.length < 2) return;
         var current = 0;
