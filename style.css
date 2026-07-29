@@ -1536,6 +1536,49 @@
 
         .dropin-addon-chip strong { color: #111111; font-weight: 600; }
 
+        /* ── SHOP ── */
+        .shop-section {
+            padding: 100px 48px;
+            border-top: 1px solid #e6e3dd;
+            background: #faf8f4;
+        }
+
+        .shop-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .shop-eyebrow {
+            font-family: 'Oswald', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.32em;
+            color: #8a6d1f;
+            text-transform: uppercase;
+        }
+
+        .shop-heading {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(48px, 6vw, 80px);
+            font-weight: 700;
+            color: #111111;
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .shop-sub {
+            font-family: 'Archivo', sans-serif;
+            font-size: 16px;
+            color: #5f5c57;
+            line-height: 1.75;
+            max-width: 480px;
+        }
+
         /* ── FOOTER ── */
         .footer {
             border-top: 1px solid #e8e8e8;
@@ -1813,6 +1856,16 @@
         .form-textarea {
             resize: vertical;
             min-height: 130px;
+        }
+
+        .form-select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230b0b0c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+            cursor: pointer;
         }
 
         .form-footer {
@@ -2098,7 +2151,7 @@
 
         /* Panel */
         .social-card-panel {
-            height: 220px;
+            height: 266px;
             flex-shrink: 0;
             display: flex;
             align-items: center;
@@ -2240,6 +2293,7 @@
             .socials-header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
             .socials-heading { font-size: 36px; }
             .socials-grid { grid-template-columns: 1fr; gap: 16px; }
+            .social-card-panel { height: 220px; }
             .social-card { min-height: unset; }
             .social-card-handle { font-size: 19px; }
         }

@@ -12,7 +12,8 @@ $to = 'EliteTekSoccerAcademy@yahoo.com';
 $name    = htmlspecialchars(strip_tags(trim($_POST['name']    ?? '')));
 $email   = trim($_POST['email']   ?? '');
 $phone   = htmlspecialchars(strip_tags(trim($_POST['phone']   ?? '')));
-$message = htmlspecialchars(strip_tags(trim($_POST['message'] ?? '')));
+$interest = htmlspecialchars(strip_tags(trim($_POST['interest'] ?? '')));
+$message  = htmlspecialchars(strip_tags(trim($_POST['message'] ?? '')));
 
 if (empty($name) || empty($email) || empty($phone) || empty($message)) {
     http_response_code(400);
@@ -30,9 +31,10 @@ $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
 $subject  = 'Elite Tek — New message from ' . $name;
 
-$body  = "Name:    $name\n";
-$body .= "Email:   $email\n";
-if ($phone) $body .= "Phone:   $phone\n";
+$body  = "Name:      $name\n";
+$body .= "Email:     $email\n";
+if ($phone)    $body .= "Phone:     $phone\n";
+if ($interest) $body .= "Interested In: $interest\n";
 $body .= "\nMessage:\n$message\n";
 
 $headers  = "From: noreply@elitetek.com\r\n";

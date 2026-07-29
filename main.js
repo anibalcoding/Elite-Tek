@@ -48,7 +48,7 @@
     var platforms = [
         { icon: igIcon, platform: 'Instagram', handle: '@EliteTekSoccerAcademy', tag: 'Training · Highlights', url: 'https://www.instagram.com/EliteTekSoccerAcademy', image: 'assets/instagram-page.jpeg', likeIcon: heartIcon, likeColor: '#E1306C' },
         { icon: fbIcon, platform: 'Facebook',  handle: '@EliteTekSoccerAcademy', tag: 'Updates · Community',   url: 'https://www.facebook.com/EliteTekSoccerAcademy', image: 'assets/facebook-page.jpeg',  likeIcon: thumbIcon, likeColor: '#1877F2' },
-        { icon: ttIcon, platform: 'TikTok',    handle: '@EliteTekSoccerAcademy', tag: 'Drills · Reels',       url: 'https://www.tiktok.com/@EliteTekSoccerAcademy' }
+        { icon: ttIcon, platform: 'TikTok',    handle: '@EliteTekSoccerAcademy', tag: 'Drills · Reels',       url: 'https://www.tiktok.com/@EliteTekSoccerAcademy', image: 'assets/tik-tok.jpeg',    likeIcon: heartIcon, likeColor: '#000000' }
     ];
 
     var grid = document.getElementById('socials-grid');
@@ -78,7 +78,7 @@
         '</a>';
     }).join('');
 
-    var likeTargets = { Instagram: 100, Facebook: 847 };
+    var likeTargets = { Instagram: 100, Facebook: 100  };
     document.querySelectorAll('.fb-like-count').forEach(function (likeEl) {
         var platform = likeEl.closest('.social-card').querySelector('.social-card-platform').textContent.trim();
         var target = likeTargets[platform] || 100;

@@ -30,8 +30,8 @@
 
         <nav class="header-nav" aria-label="Main navigation">
             <a href="#" class="active">Home</a>
-            <a href="#memberships">Programs</a>
             <a href="#about">About Us</a>
+            <a href="#memberships">Programs</a>
             <a href="#gallery">Gallery</a>
             <a href="#locations">Locations</a>
             <a href="#contact">Contact</a>
@@ -56,8 +56,8 @@
     <!-- Mobile nav drawer -->
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
         <a href="#" class="active">Home</a>
-        <a href="#memberships">Programs</a>
         <a href="#about">About Us</a>
+        <a href="#memberships">Programs</a>
         <a href="#gallery">Gallery</a>
         <a href="#locations">Locations</a>
         <a href="#contact">Contact</a>
@@ -582,6 +582,21 @@
                     </div>
 
                     <div class="form-group">
+                        <label class="form-label" for="cf-interest">Interested In</label>
+                        <select class="form-input form-select" id="cf-interest" name="interest">
+                            <option value="" disabled selected>Select a program or session…</option>
+                            <option value="Gold Membership">Gold Membership — $295/mo</option>
+                            <option value="Silver Membership">Silver Membership — $240/mo</option>
+                            <option value="Bronze Membership">Bronze Membership — $140/mo</option>
+                            <option value="Mini Elites">Mini Elites — $80 / 4 sessions</option>
+                            <option value="Beginners Sessions">Beginners Sessions — $100 / 4 sessions</option>
+                            <option value="Shooting Sessions">Shooting Sessions — $100/session</option>
+                            <option value="Drop-In Session">Drop-In Session</option>
+                            <option value="Not Sure Yet">Not Sure Yet — Just Exploring</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
                         <label class="form-label" for="cf-message">Message <span class="form-required">*</span></label>
                         <textarea class="form-input form-textarea" id="cf-message" name="message" rows="5" placeholder="Tell us about your player, their age, position, and goals…" required></textarea>
                     </div>
@@ -613,6 +628,15 @@
 
         <div class="socials-grid" id="socials-grid"></div>
 
+    </section>
+
+    <!-- ── SHOP ── -->
+    <section class="shop-section" id="shop">
+        <div class="shop-inner" data-reveal="0">
+            <span class="shop-eyebrow">SHOP</span>
+            <h2 class="shop-heading">Coming Soon.</h2>
+            <p class="shop-sub">Elite Tek gear is on its way. Check back for kits, training apparel, and more.</p>
+        </div>
     </section>
 
     <!-- ── FOOTER ── -->
