@@ -1,24 +1,18 @@
 // ── GALLERY RENDER ──
 (function () {
     var roster = [
-        { cat: 'Pro',     photo: 'PlayerPhotos/Pro/IMG_0758.jpeg' },
-        { cat: 'College', photo: 'PlayerPhotos/College/IMG_0772.jpeg' },
-        { cat: 'Academy', photo: 'PlayerPhotos/Academy/IMG_0307.jpeg' },
-        { cat: 'Pro',     photo: 'PlayerPhotos/Pro/IMG_1833.jpeg' },
-        { cat: 'College', photo: 'PlayerPhotos/College/IMG_1675.jpeg' },
-        { cat: 'Academy', photo: 'PlayerPhotos/Academy/IMG_0463.jpeg' },
-        { cat: 'Pro',     photo: 'PlayerPhotos/Pro/IMG_1853.jpeg' },
-        { cat: 'College', photo: 'PlayerPhotos/College/IMG_2036.jpeg' },
-        { cat: 'Academy', photo: 'PlayerPhotos/Academy/IMG_0897.jpeg' },
-        { cat: 'Pro',     photo: 'PlayerPhotos/Pro/IMG_1957.jpeg' },
-        { cat: 'College', photo: 'PlayerPhotos/College/IMG_4350.jpeg' },
-        { cat: 'Academy', photo: 'PlayerPhotos/Academy/IMG_1025.jpeg' },
-        { cat: 'Pro',     photo: 'PlayerPhotos/Pro/IMG_4092.jpeg' },
-        { cat: 'College', photo: 'PlayerPhotos/College/IMG_4518.jpeg' },
-        { cat: 'Academy', photo: 'PlayerPhotos/Academy/IMG_1085.jpeg' },
-        { cat: 'Pro',     photo: 'PlayerPhotos/Pro/IMG_4152.jpeg' },
-        { cat: 'College', photo: 'PlayerPhotos/College/IMG_1209.jpeg' },
-        { cat: 'Academy', photo: 'PlayerPhotos/Academy/IMG_1134.jpeg' }
+        { cat: 'Pro', name: 'Logan Farrington', photo: 'PlayerPhotos/Pro/Logan-Farrington-Pro.jpeg' },
+        { cat: 'Pro', name: 'Benji Flowers',    photo: 'PlayerPhotos/Pro/Benji-Flowers-Pro.jpeg' },
+        { cat: 'Pro', name: 'Bailey Sparks',    photo: 'PlayerPhotos/Pro/Bailey-Sparks-Pro.jpeg' },
+        { cat: 'Pro', name: 'Roman Torres',     photo: 'PlayerPhotos/Pro/Roman-Torres-Pro.jpeg' },
+        { cat: 'Pro', name: 'Jackson Castro',   photo: 'PlayerPhotos/Pro/Jackson-Castro-Pro.jpeg' },
+        { cat: 'Pro', name: 'Viggo Ortiz',      photo: 'PlayerPhotos/Pro/Viggo-Ortiz-Pro.jpeg' },
+        { cat: 'Pro', name: 'Bryce Boneau',     photo: 'PlayerPhotos/Pro/Bryce-Boneau-Pro.jpeg' },
+        { cat: 'Pro', name: 'Amalia Lopez',     photo: 'PlayerPhotos/Pro/Amalia-Lopez-Pro.jpeg' },
+        { cat: 'Pro', name: 'Jaidyn Contreras', photo: 'PlayerPhotos/Pro/Jaidyn-Contreras-Pro.jpeg' },
+        { cat: 'Pro', name: 'Isaiah Kaakoush',  photo: 'PlayerPhotos/Pro/Isaiah-Kaakoush-Pro.jpeg' },
+        { cat: 'Pro', name: 'Leo Orejarena',    photo: 'PlayerPhotos/Pro/Leo-Orejarena-Pro.jpeg' },
+        { cat: 'Pro', name: 'Anthony Patti',    photo: 'PlayerPhotos/Pro/Anthony-Patti-Pro.jpeg' },
     ];
 
     var grid = document.getElementById('roster-grid');
@@ -30,10 +24,26 @@
             '<div class="roster-card-overlay"></div>' +
             '<div class="roster-card-info">' +
                 '<span class="roster-card-tick"></span>' +
+                (p.name ? '<span class="roster-card-name">' + p.name + '</span>' : '') +
                 '<span class="roster-card-cat">' + p.cat + '</span>' +
             '</div>' +
         '</a>';
     }).join('');
+
+    if (!prefersReduced) {
+        var nameObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                var card = entry.target;
+                var delay = parseInt(card.dataset.reveal || '0', 10) + 220;
+                setTimeout(function () { card.classList.add('name-in'); }, delay);
+                nameObs.unobserve(card);
+            });
+        }, { threshold: 0.2 });
+        document.querySelectorAll('.roster-card').forEach(function (c) { nameObs.observe(c); });
+    } else {
+        document.querySelectorAll('.roster-card').forEach(function (c) { c.classList.add('name-in'); });
+    }
 }());
 
 // ── SOCIALS RENDER ──
