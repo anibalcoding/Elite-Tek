@@ -13,6 +13,8 @@
         { cat: 'Pro', name: 'Isaiah Kaakoush',  photo: 'PlayerPhotos/Pro/Isaiah-Kaakoush-Pro.jpeg' },
         { cat: 'Pro', name: 'Leo Orejarena',    photo: 'PlayerPhotos/Pro/Leo-Orejarena-Pro.jpeg' },
         { cat: 'Pro', name: 'Anthony Patti',    photo: 'PlayerPhotos/Pro/Anthony-Patti-Pro.jpeg' },
+        { cat: 'Pro', name: 'Eddie Munjoma',    photo: 'PlayerPhotos/Pro/Eddie-Munjoma-Pro.jpeg' },
+        { cat: 'Pro', name: 'Kevin Bonilla',       photo: 'PlayerPhotos/Pro/Kevin-Bonilla-Pro.jpeg' },
     ];
 
     var grid = document.getElementById('roster-grid');

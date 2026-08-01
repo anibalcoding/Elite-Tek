@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You — Elite Tek Soccer Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #0b0b0c;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a { color: #0b0b0c; text-decoration: none; }
+
+        /* ── HEADER ── */
+        .header {
+            height: 84px;
+            padding: 0 48px;
+            border-bottom: 1px solid #e8e8e8;
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .header-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .header-wordmark { display: flex; flex-direction: column; gap: 2px; }
+
+        .header-wordmark-top {
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+            line-height: 1;
+            color: #0b0b0c;
+        }
+
+        .header-wordmark-sub {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.22em;
+            color: #777777;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        /* ── MAIN ── */
+        .ty-main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 32px;
+        }
+
+        .ty-card {
+            max-width: 580px;
+            width: 100%;
+            text-align: center;
+            animation: fadeUp 0.7s cubic-bezier(0.22, 0.9, 0.3, 1) both;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .ty-check {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: #0b0b0c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+        }
+
+        .ty-check svg {
+            width: 28px;
+            height: 28px;
+            color: #c9a13b;
+        }
+
+        .ty-eyebrow {
+            font-family: 'Oswald', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: #c9a13b;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .ty-heading {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(42px, 7vw, 72px);
+            font-weight: 700;
+            line-height: 0.95;
+            letter-spacing: -0.02em;
+            color: #0b0b0c;
+            margin-bottom: 24px;
+        }
+
+        .ty-sub {
+            font-family: 'Archivo', sans-serif;
+            font-size: 16px;
+            color: #5f5c57;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .ty-divider {
+            width: 40px;
+            height: 2px;
+            background: #c9a13b;
+            margin: 0 auto 40px;
+        }
+
+        .ty-steps {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 48px;
+            text-align: left;
+        }
+
+        .ty-steps li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-family: 'Archivo', sans-serif;
+            font-size: 14px;
+            color: #3a3833;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #e6e3dd;
+        }
+
+        .ty-steps li:last-child { border-bottom: none; padding-bottom: 0; }
+
+        .ty-step-num {
+            font-family: 'Oswald', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: #c9a13b;
+            background: #faf8f4;
+            border: 1px solid #e6e3dd;
+            border-radius: 4px;
+            padding: 3px 7px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .ty-cta {
+            display: inline-block;
+            background: #0b0b0c;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 16px 36px;
+            border-radius: 100px;
+            transition: background 0.18s;
+            text-decoration: none;
+        }
+
+        .ty-cta:hover { background: #c9a13b; color: #ffffff; }
+
+        /* ── FOOTER ── */
+        .footer {
+            border-top: 1px solid #e8e8e8;
+            padding: 24px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #aaaaaa;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer a { color: #aaaaaa; }
+        .footer a:hover { color: #0b0b0c; }
+
+        @media (max-width: 600px) {
+            .header { padding: 0 24px; }
+            .footer { padding: 20px 24px; flex-direction: column; align-items: flex-start; }
+            .ty-main { padding: 60px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="header-brand">
+            <img src="assets/Elite-Tek_logo.png" alt="Elite Tek Soccer Academy logo" class="header-logo"
+                onerror="this.style.display='none'">
+            <div class="header-wordmark">
+                <span class="header-wordmark-top">ELITE TEK</span>
+                <span class="header-wordmark-sub">Soccer Academy</span>
+            </div>
+        </a>
+    </header>
+
+    <main class="ty-main">
+        <div class="ty-card">
+
+            <div class="ty-check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+            </div>
+
+            <span class="ty-eyebrow">Payment Confirmed</span>
+            <h1 class="ty-heading">YOU'RE IN.<br>LET'S WORK.</h1>
+            <p class="ty-sub">Your registration is confirmed. Welcome to Elite Tek — we'll be in touch shortly with your session details and schedule.</p>
+
+            <div class="ty-divider"></div>
+
+            <ul class="ty-steps">
+                <li>
+                    <span class="ty-step-num">01</span>
+                    <span>Check your email for a confirmation receipt from Stripe.</span>
+                </li>
+                <li>
+                    <span class="ty-step-num">02</span>
+                    <span>Our team will reach out within 24 hours to confirm your first session date and time.</span>
+                </li>
+                <li>
+                    <span class="ty-step-num">03</span>
+                    <span>Show up ready to work. Cleats, water, and the right mindset — we handle the rest.</span>
+                </li>
+            </ul>
+
+            <a href="index.html" class="ty-cta">Back to Home →</a>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <span>© 2026 Elite Tek Soccer Academy</span>
+        <span>
+            <a href="mailto:EliteTekSoccerAcademy@yahoo.com">EliteTekSoccerAcademy@yahoo.com</a>
+            &nbsp;·&nbsp;
+            <a href="tel:+14696256553">(469) 625-6553</a>
+        </span>
+    </footer>
+
+</body>
+</html>
